@@ -1,32 +1,43 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <div></div>
-          <a className="App-link"
-             href="https://reactjs.org"
-             target="_blank"
-             rel="noopener noreferrer"
-
-          >
+import {ThemeContext, themes} from './ContextDemo/theme-context';
+import ThemeTogglerButton from './ContextDemo/theme-toggler-button';
 
 
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+export default class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.toggleTheme = () => {
+            this.setState(state => ({
+                theme:
+                    state.theme === themes.dark
+                        ? themes.light
+                        : themes.dark,
+            }));
+        };
+
+        // State 也包含了更新函数，因此它会被传递进 context provider。
+        this.state = {
+            theme: themes.light,
+            toggleTheme: this.toggleTheme,
+        };
+    }
+
+    render() {
+        // 整个 state 都被传递进 provider
+        return (
+            <ThemeContext.Provider value={this.state}>
+                <Content />
+            </ThemeContext.Provider>
+        );
+    }
 }
 
-export default App;
+function Content() {
+    return (
+        <div>
+            <ThemeTogglerButton />
+        </div>
+    );
+}
