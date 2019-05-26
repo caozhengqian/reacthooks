@@ -9,21 +9,23 @@ import {useDocumentTitle} from './use/useDocumentTitle'
 
 
 
-export default function Greeting(props) {
-    const name = useFormInput();
-    const surname = useFormInput();
+export default function Router1(props) {
+    const name = useFormInput('Mary');
+    const surname = useFormInput('pop');
+    const button = useFormButton([name.value,surname.value,props,'router1'])
     const width = useWindowWidth();
-    const button = useFormButton([name.value,surname.value,props,'greeting'])
+
     useDocumentTitle(`${name.value } ${surname.value}`);
+
 
     return (
         <div>
-            <p>greeting</p>
+            <p>router1</p>
             <Input {...name} />
-            <Input {...name} />
-            <Input />
+            <Input {...surname} />
             <Button {...button}/>
             {width}
+
         </div>
     )
 }
