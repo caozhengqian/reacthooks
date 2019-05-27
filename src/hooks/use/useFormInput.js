@@ -3,7 +3,6 @@ import {ThemeContext} from "../context/inputContex";
 export  function useFormInput(initialValue) {
     const theme = useContext(ThemeContext)
     const [value,setValue] = useState(initialValue)
-    console.info(theme.c);
     function handleChange(e){
         console.info('change');
         setValue(e.target.value);

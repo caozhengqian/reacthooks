@@ -14,7 +14,6 @@ export default function Router1(props) {
     const surname = useFormInput('pop');
     const button = useFormButton([name.value,surname.value,props,'router1'])
     const width = useWindowWidth();
-
     useDocumentTitle(`${name.value } ${surname.value}`);
 
 

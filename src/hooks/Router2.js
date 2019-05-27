@@ -12,7 +12,7 @@ import {useDocumentTitle} from './use/useDocumentTitle'
 export default function Router2(props) {
     const name = useFormInput('Mary');
     const surname = useFormInput('pop');
-    const button = useFormButton([name.value,surname.value,props])
+    const button = useFormButton([name.value,surname.value,props,'router2'])
     const width = useWindowWidth();
 
     useDocumentTitle(`${name.value } ${surname.value}`);
@@ -20,7 +20,7 @@ export default function Router2(props) {
 
     return (
         <div>
-            <p>router2</p>
+            <p>router22222222222222</p>
             <Input {...name} />
             <Input {...surname} />
             <Button {...button}/>
