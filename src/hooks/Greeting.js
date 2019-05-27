@@ -17,6 +17,16 @@ export default function Greeting(props) {
     useDocumentTitle(`${name.value } ${surname.value}`);
     const theme = useContext(ThemeContext)
     console.info(theme.c)
+    // {slides.map((slide, index) => (
+    //     <SlideNavItem
+    //         key={index}
+    //         isCurrent={index === state.currentIndex}
+    //         aria-label={`Slide ${index + 1}`}
+    //         onClick={() => {
+    //             dispatch({ type: "GOTO", index });
+    //         }}
+    //     />
+    // ))}
     return (
         <div>
             <p>greeting</p>
