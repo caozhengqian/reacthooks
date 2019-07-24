@@ -11,8 +11,7 @@ function App() {
   return (
       <BrowserRouter>
         <div>
-          <Switch>
-              <Route path='/login' component={Router1}></Route>
+          <Switch><Route path='/login' component={Router1}></Route>
             <Route path='/greet' component={Greeting}></Route>
 
             <Route path='/router2' component={Router2}></Route>

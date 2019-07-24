@@ -1,4 +1,4 @@
-import React ,{useContext}from 'react';
+import React ,{useContext,useEffect}from 'react';
 
 import {Input,Button,Row,Col} from 'antd'
 
@@ -16,21 +16,22 @@ export default function Greeting(props) {
     const button = useFormButton([name.value,surname.value,props,'greeting'])
     useDocumentTitle(`${name.value } ${surname.value}`);
     const theme = useContext(ThemeContext)
-    console.info(theme.c)
-    // {slides.map((slide, index) => (
-    //     <SlideNavItem
-    //         key={index}
-    //         isCurrent={index === state.currentIndex}
-    //         aria-label={`Slide ${index + 1}`}
-    //         onClick={() => {
-    //             dispatch({ type: "GOTO", index });
-    //         }}
-    //     />
-    // ))}
+    useEffect(()=>{
+        console.info('c')
+    });
     return (
         <div>
             <p>greeting</p>
             <Row  type="flex" justify="center" align="bottom">
+                <Col span={24}><Input {...name}  /></Col>
+                <Col span={24}><Input {...name}  /></Col>
+                <Col span={24}><Input {...name}  /></Col>
+                <Col span={24}><Input {...name}  /></Col>
+                <Col span={24}><Input {...name}  /></Col>
+                <Col span={24}><Input {...name}  /></Col>
+                <Col span={24}><Input {...name}  /></Col>
+                <Col span={24}><Input {...name}  /></Col>
+                <Col span={24}><Input {...name}  /></Col>
                 <Col span={24}><Input {...name}  /></Col>
 
                 <Col span={6} >  <Row type="flex"  justify="center"><p>+</p></Row></Col>
@@ -41,8 +42,6 @@ export default function Greeting(props) {
                 <Col span={12}> <Button {...button}/></Col>
                 <Col span={12}>  {width}</Col>
             </Row>
-
-
         </div>
     )
 }
