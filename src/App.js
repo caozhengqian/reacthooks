@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Redirect,Switch } from 'react-router-dom'
 import Greeting from './hooks/Greeting'
 import Router1 from './hooks/Router1'
 import Router2 from './hooks/Router2'
+import Test from './hooks/test/Test'
 // "start": "react-app-rewired start",
 //     "build": "react-app-rewired build",
 //     "test": "react-app-rewired test",
@@ -15,7 +16,8 @@ function App() {
             <Route path='/greet' component={Greeting}></Route>
 
             <Route path='/router2' component={Router2}></Route>
-              <Redirect to='/greet'></Redirect>
+            <Route path='/test' component={Test}></Route>
+              <Redirect to='/test'></Redirect>
 
           </Switch>
         </div>
