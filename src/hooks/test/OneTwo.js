@@ -9,15 +9,48 @@ export default class OneTwo  extends React.Component{
         }
         console.info(this.props.data)
     }
-    Change(){
-        console.info('kaiak')
+    getOneChangeTextChange(){
+        console.info('getOneChangeTextChange')
     }
 
     render(){
-
+        const fil = this.props.fil;
+        const data = this.props.data;
+        const rows = [];
+        let title = '';
+        data.forEach((v,k)=>{
+            if(v.name.indexOf(fil) === -1){
+                return ;
+            }
+            if(title !== v.category){
+                rows.push(
+                    <tr key={v.category}>
+                        <th>{v.category}</th>
+                    </tr>
+                )
+            }
+            rows.push(
+                <tr key={v.name}>
+                    <td>{v.name}</td>
+                    <td>{v.price}</td>
+                </tr>
+            )
+            title = v.category
+        })
         return(
-            <input type='text' onChange={()=>this.Change()}/>
-
+            <>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {rows}
+                    </tbody>
+                </table>
+            </>
         )
     }
 }

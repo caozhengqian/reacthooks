@@ -1,4 +1,4 @@
-import React ,{Component,PureComponent}from 'react';
+import React ,{Component}from 'react';
 import {Button} from 'antd'
 
 import CerIner from './CerIner'

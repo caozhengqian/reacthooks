@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        span.highlight
+        {
+            background-color:yellow
+        }
+        .aha{
+            border: 3px solid red;
+            text-align:center;
+            line-height:100px;
+        }
+
+        .parent{
+            height:500px;
+            position: relative;
+            border: 1px solid red;
+            padding: 100px 0;
+
+        }
+        .child{
+            height:200px;
+            width:200px;
+            border: 1px solid green;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding:18px 0px 18px 0px;
+            /*margin-left: 300px;*/
+            /*margin-right: 300px;*/
+            /*margin-left: auto;*/
+            /*margin-right:auto;*/
+        }
+        .highlight2{
+            text-align:center;
+        }
+    </style>
+    <script>
+//        面试题
+//        abc()   //打印abc
+//        function abc() {
+//            console.info('abc');
+//        }
+//
+//        //abcd()  //abcd is not defined
+//        abcd = ()=>{
+//            console.info('abcd')
+//        }
+
+        //-------------------------------------
+
+//        let i =0;
+//        for(i;i<5;i++){
+//
+//        }
+//        console.info(i) //5
+
+//        for(var i = 0; i < 5; i++){
+//
+//        }
+//        console.info(i) //5
+
+//        for(var i = 0; i < 5; i++){
+//           setTimeout(function () {
+//               console.info(i)
+//               console.info(new Date())
+//           },3000)
+//        }//同样的5 同样的时间，10秒开始点，打印13秒的时间5次
+
+        //数组去重复,
+//        var arr=[2,8,5,0,5,2,6,7,2]
+//        var reslut = Array.from(new Set(arr))
+//
+//        console.info(reslut)    //[2, 8, 5, 0, 6, 7]
+//
+//        var arr1 = [{a:1,b:2,c:3,a:1}]
+//        var reslut1 = Array.from(new Set(arr1));
+//        console.info(reslut1)   //[{...}]
+//                                      0:
+//                                           a: 1
+//                                           b: 2
+//                                           c: 3
+//                                          __proto__: Object
+//                                          length: 1
+//                                          __proto__: Array(0)
+
+
+//        var arr2 = [{a:1},{b:2},{c:3},{a:1}]
+//        var reslut2 = Array.from(new Set(arr2));
+//        console.info(reslut2)
+//                     (4) [{…}, {…}, {…}, {…}]
+//                            0: {a: 1}
+//                            1: {b: 2}
+//                            2: {c: 3}
+//                            3: {a: 1}
+//                            length: 4
+//                              __proto__: Array(0)
+//        var arr3 = [{a:1},{b:2},{c:3},{a:1}]
+//        let res = [];
+//        arr3.forEach((v)=>{
+//
+//        })
+
+    </script>
+    <script>
+        let one = 'one';
+        let two = 'two';
+        let three = 'three';
+        let four = 'aabbccddaaaeaeffgg';
+//        console.info(one.charAt(2))               //e
+//        console.info(one.concat(two,three));      //onetwothree
+//        console.info(one.indexOf('e'));           //2  没搜索到就-1
+        console.info(four.indexOf('a',3));           //8  从第三位开始往后搜索
+//        console.info(four.lastIndexOf('e',13));   //13   从18往前搜索，第一次出现的地方的index
+//        let str="1 plus 2 equal 3"
+//        console.info(str.match(/\d+/g))             //(3) ["1", "2", "3"]
+//        console.info(str.slice(3))             //lus 2 equal 3
+//        console.info(str.slice(3,5))             //lu 取4、5位
+//        console.info(str.slice(3,-3))             //lus 2 equa 取4到-4位
+//        console.info(str.substring(3))             //lus 2 equal 3
+//        console.info(str.substring(3,5))             //lu  参数不能有负数
+//        console.info(str.slice(3,-3))             //lus 2 equa 取4到-4位
+//        console.info(str.substr(3))             //lus 2 equal 3 与上面一样
+//        console.info(str.substr(3,5))             //lus 2 取5位
+
+//        let str="How are you doing today?"
+//        console.info(str.split(" "))             //["How", "are", "you", "doing", "today?"] 根据输入切成数组
+//        console.info(str.split(""))             //(24) ["H", "o", "w", " ", "a", "r", "e", " ", "y", "o", "u", " ", "d", "o", "i", "n", "g", " ", "t", "o", "d", "a", "y", "?"]
+//        console.info(str.split("",3))           //(3) ["H", "o", "w"]
+//        console.info(str.toLocaleLowerCase())           //how are you doing today? toLowerCase()在土耳其等语言会失效
+//        console.info(str.toLocaleUpperCase())           //HOW ARE YOU DOING TODAY?
+//        var arr = ['a','b','c']
+//         console.info(arr.toString())    //abc
+//        var arr = [{a:1},{b:2},{c:3}]
+//        console.info(arr.toLocaleString())    //[object Object],[object Object],[object Object]
+//        var d = new Date()
+//        console.info(d.toLocaleString())        //2019/8/10 下午9:59:28
+//        console.info(d.toString())              //Sat Aug 10 2019 21:59:28 GMT+0800 (中国标准时间)
+//        console.info('abc'.valueOf())       //abc  获取string的原始值
+
+//        ES6
+//        for (let codePoint of 'foo') {
+//            console.log(codePoint) //f  o   o
+//        }
+
+//        console.info('x'.padStart(6, 'ab')) // 'ababax'  x前面使用ab补齐，总长6
+//        console.info('x'.padEnd(6, 'ab')) // 'xababa'    x后面补齐
+
+//        var s = 'Hello world!';
+//        console.info(s.startsWith('H')) //true  区分大小写
+//        console.info(s.endsWith('!')) //true  区分大小写
+//        console.info(s.includes('!')) //true  区分大小写
+
+//        console.info('x'.repeat(3)) // "xxx"
+    </script>
+    <script>
+//        var arr = new Array(1)
+//        arr[0] = "ab"
+//        var arr2 = new Array(1)
+//        arr2[0] = "cd"
+//        var arr3 = new Array(2)
+//        arr3[0] = "ef"
+//        arr3[1] = "ab"
+//        console.info(arr.concat(arr2,arr3)) // ["ab", "cd", "ef", "ab"]不去重复
+//        console.info(arr.concat('aabb')) // (2) ["ab", "aabb"]
+
+var arr = ['a','b','c','d','e']
+document.write(arr.join("."))       //a.b.c 用点做间隔
+document.write(arr.pop())       //c 删除最后一个，并返回最后一个
+//document.write(arr.shift())       //a 删除第一个，并返回第一个
+
+//document.write(arr.push('f','g'))       //7 末尾增加多个/1个，返回长度
+//document.write(arr.unshift('f','g') )      //7 开始增加，返回长度
+//document.write(arr.reverse())       //c,b,a 颠倒
+//var a = arr.slice(1)                //b,c,d
+//var a = arr.slice(3,5)                //d,e截取4、5位
+//document.write(arr.pop())       //c 删除最后一个，并返回最后一个
+//document.write(arr.pop())       //c 删除最后一个，并返回最后一个
+
+//arr.splice(2,0,'aa')        //a,b,aa,c,d,e 第几个开始-1为结尾  替换数量
+//arr.splice(2,1,'aa')        //a,b,aa,d,e 第几个开始-1为结尾  替换数量
+
+
+//冒泡函数
+//function sortNumber(a,b)
+//{
+//    console.info('a='+a)
+//    console.info('b='+b)
+//    console.info(a-b)
+//    return a - b
+//}
+
+//var arr = new Array(6)
+//arr[0] = 10
+//arr[1] = 5
+//arr[2] = 40
+//arr[3] = 25
+//arr[4] = 1000
+//arr[5] = 1
+//
+//document.write(arr + "<br />")
+//document.write(arr.sort(sortNumber))
+
+//console.info(Array.of(3)) //[3]  弥补Array（3）
+//console.info([1, 4, -5, 10].find((n) => n < 0))  //-5  返回第一个符合条件的值
+//console.info([1, 4, -5, 10].findIndex((n) => n < 0))  //2  返回第一个符合条件的index
+//console.info(new Array(3).fill(7))      //(3) [7, 7, 7] 填充
+//console.info(['a', 'b', 'c'].fill(7, 1, 2)) //(3) ["a", 7, "c"]  7覆盖掉1和2的位置的1
+//for (let index of ['a', 'b'].keys()) {  //values
+//    console.log(index); //0 1    or values a  b
+//}
+//for (let index in ['a', 'b']) {  //values
+//    console.log(index); //0 1    or values a  b
+//}
+//
+//for (let [index, elem] of ['a', 'b'].entries()) {
+//    console.log(index, elem);//0 "a"  1 "b"
+//}
+//
+//console.info([1, 2, 3].includes(2));//true 是否包含
+    </script>
+    <script>
+
+//        var target = { a: 1 };
+//        var tr = target;
+//        var source1 = { b: 2 };
+//        var source2 = { c: 3 };
+//        var source3 = { c: 4 }; //覆盖上一个c的值
+//        Object.assign(target, source1, source2,source3);
+//        console.info(target)    //{a: 1, b: 2, c: 3}
+//        console.info(target == tr) //true
+//
+//        console.info(Reflect.ownKeys(target))//(3) ["a", "b", "c"] 替换object.keys（）,这个方法适应key为symbol
+//
+//    for (let key of Object.keys(tr)) {
+//        console.log(key); // 'a', 'b', 'c'
+//        console.info(tr[key])// 1  2  4
+//    }
+
+
+    </script>
+
+    <script>
+//        console.info(typeof(null))  //object
+//        console.info(typeof(a))     //undefined
+//        console.info(1+false)     //2
+//        console.info(1+null)     //1
+//        console.info(1+undefined)     //NaN
+//        console.info(0.1+0.2 ==0.3) //0.300000004 false
+//-------------------------------------
+//        var i,j,k;
+//        for(i = 0,j = 0; i < 8,j<5; i++,j++){
+//            k = i + j;
+//        }
+//        console.info(i,j,k);  //558
+//--------------------------------------------------------------------------
+//        var foo = "Hello";
+//(function () {
+//    var bar = "World";
+//    console.info(foo+bar);   //Hello World
+//})();
+//console.info(foo +bar);      //报错bar is not defined
+//------------------------------------------------------
+//for(var i=0;i<2;i++){
+//    setTimeout(()=>{
+//        console.info(i);
+//    },0);
+//}
+//Promise.resolve().then(()=> console.info(3));
+//(()=> console.info(4))();
+////4  3  22
+//------------------------------------------------------
+//var F = function () {}
+//Object.prototype.a = function () {
+//    console.info("Object")
+//};
+//Function.prototype.b = function () {
+//    console.info("Function");
+//};
+//var f = new F();
+//try{f.a();}catch(e){console.info('faerror')}//Object
+//try{f.b();}catch(e){console.info('fberror')}//fberror
+//try{F.a();}catch(e){console.info('Faerror')}//Object
+//try{F.b();}catch(e){console.info('Fberror')}//Function
+//------------------------------------------------------
+//var {a,b,c} = {"c":10,"b":9,"a":8}  //8 9 10
+//console.info(a)
+//console.info(b)
+//console.info(c)
+//------------------------------------------------------
+//var obj1 = {
+//    name:"obj1",
+//    sayName:function sayName(){
+//        console.info(this.name);
+//    }
+//}
+//name = "name";
+//
+//var obj2 = {name:'obj2'};
+//var obj3 = {
+//    name:"obj3",
+//    sayName:function () {
+//        (
+//            function () {
+//                console.info(this.name);
+//            }
+//        )();
+//    }
+//};
+//var obj4 ={
+//    name:'obj4',
+//    sayName:()=>{
+//        console.info(this.name);
+//    }
+//}
+//obj1.sayName();//obj1
+//obj3.sayName();//name
+//obj4.sayName();//name
+//obj1.sayName.call(obj2)//obj2
+//obj3.sayName.call(obj2)//name
+//obj4.sayName.call(obj2)//name
+//------------------------------------------------------
+//const promise = new Promise((resolve,reject)=>{
+//    console.log(1)
+//    resolve()
+//    console.log(2)
+//})
+//promise.then(()=>{
+//    console.info(3)
+//})
+//console.info(4)
+//function aa() {
+//    console.info('aa')
+//}
+//aa()
+// 1   2    4    aa   3
+//------------------------------------------------------
+//setTimeout(function () {
+//    console.info(1)
+//},0)
+//new Promise(function executor(resolve){
+//    console.info(2);
+//    for(var i=0;i<10000;i++){
+//        i==9999 && resolve();
+//    }
+//    console.info(3);
+//}).then(function () {
+//    console.info(4);
+//})
+//console.info(5)
+//2 3 5 4 1
+//------------------------------------------------------
+//p();
+//var p = 3;
+function p() {
+    console.info('a')
+}
+function p() {
+    console.info('b');
+}
+p();
+//console.info(p)
+console.info('c')
+    </script>
+</head>
+
+<body>
+    <div class="highlight2">
+        文本、文本、文本
+    </div>
+    <input type='button' value="new" onclick="location.assign('new.html')"/>
+    <form target="_blank" action="new.html"></form>
+<p>
+    <span class="highlight">这是文本。</span> 这是文本。 这是文本。 这是文本。 这是文本。 这是文本。 这是文本。 这是文本。 这是文本。 这是文本。 这是文本。 这是文本。 这是文本。 这是文本。 这是文本。 这是文本。 这是文本。 <span class="highlight">这是文本。</span>
+</p>
+
+
+<div class="aha">
+    <span>从明天起</span>
+</div>
+
+<div class="parent">
+    <div class="child">haha</div>
+</div>
+</body>
+</html>

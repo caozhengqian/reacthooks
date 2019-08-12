@@ -1,24 +1,27 @@
 import  React from 'react';
 import  OneTwo from './OneTwo';
+import  OneOne from './OneOne';
 
 export default class One  extends React.Component{
     constructor(props) {
         super(props)
         this.state = {
-            isActive: false,
+            filData: '',
+            stocked:false,
         }
-        console.info(this.props.data)
+        // console.info(this.props.data)
     }
-    Change(){
-        console.info('kaiak')
+    getOneChangeTextChange(text){
+        console.info('getOneChangeTextChange')
+        console.info(text.target.value)
+        this.setState({filData:text.target.value})
     }
 
     render(){
-
         return(
             <>
-            <input type='text' onChange={()=>this.Change()}/>
-            <OneTwo/>
+            <OneOne getOneChangeTextChange={(e)=>this.getOneChangeTextChange(e)}/>
+            <OneTwo data={this.props.data} fil={this.state.filData}/>
             </>
         )
    }

@@ -1,7 +1,7 @@
 import  React from 'react';
 // import  OneTwo from './OneTwo';
 
-export default class copy  extends React.Component{
+export default class OneOne  extends React.Component{
     constructor(props) {
         super(props)
         this.state = {
@@ -18,23 +18,10 @@ export default class copy  extends React.Component{
 
     }
 
-    onChange(){
-        console.info('onChange')
-    }
-    onClick(){
-        console.info('onClick')
-    }
     render(){
-        const data = [];
-        data.forEach((v,k)=>{
-
-        })
-        data.map((v,k)=>{
-
-        })
         return(
             <>
-                <input type='text' onChange={()=>this.onChange()} onClick={()=>this.onClick()}/>
+                <input type='text'  onChange={(e)=>this.props.getOneChangeTextChange(e)} />
             </>
 
         )
